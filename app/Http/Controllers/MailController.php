@@ -16,9 +16,10 @@ class MailController extends Controller
 
             //$recipients = ['n.yushi1992@gmail.com', 'gattsman@gmail.com'];
             
-            $recipients = ['nhanvothanh719@gmail.com', 'anhphuongtran0104ql@gmail.com'];
+            $recipients = ['nhanvothanh719@gmail.com'];
+            $cc = ['n.yushi1992@gmail.com', 'gattsman@gmail.com', 'nhanvtgcd191366@fpt.edu.vn'];
             
-            Mail::to($recipients)->send(new ContactUsMail($request));
+            Mail::to($recipients)->cc($cc)->send(new ContactUsMail($request));
             
             return response([
                 'message' => 'Send email successfully!',

@@ -19,7 +19,6 @@ class ContactUsMail extends Mailable {
 
     public function build() {
         return $this
-        ->from('isamigiken@gmail.com')
         ->subject('Contact Us Form submission')
         ->view('mails.contact')
         ->with('data', $this->data);
